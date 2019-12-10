@@ -1,3 +1,33 @@
+# Rock Paper Scissors notes
+
+Nice & funny test I've enjoyed, thank you!
+
+Details of I+D and work done: 
+- Five days of full-time work including one to decide witch technology to use.
+  - Finally I've decided to use `scala-js`, but I've found documentation is poor & obsolete.
+  - I did also thought about a Play+Scala (but I was not sure if I could use play for the tech test).
+  - I've removed all reprecations from original seed project & update to last versions.
+- Scala-js + Html5 + Css "Single Page Application".
+- Responsive: it adapts to screen resolutions.
+- Tests using uTest: I didn't develop much tests:
+    - problem: I could not get scala-js dom.document instance in tests, so there is an example on how to do it decoupling dom from testable methods in UITest.
+    - I tried to use a mock library (I had to change to scalatest framework to use mock frameworks) with no success due to dependencies nightmare & obsolete documentation.
+    - Anyway, let you know I'm used to TDD.
+- Artificial Intelligence:
+    - Uses Factory pattern.
+    - only AIRandom and AIFrequency are implemented at the moment.
+    - when # of human players changes AI memory is reset.
+- `MVC` architecture with singletons (scala objects)
+    - `//todo` remove var(s) in [Model.scala](src/main/scala/com/dgf/rockPaperScissors/Model.scala)): 
+- Game (see [Constants.scala](src/main/scala/com/dgf/rockPaperScissors/Constants.scala)):
+    - Human & bots can play
+        - together or not
+        - up to 2 humans (due to keyboard space limitation)
+        - bots with no humans always play in random mode
+    - Two games implemented
+        - `Rock,Paper,Scissors`
+        - `Rock,Paper,Scissors, Spock,Lizard`
+
 # Barebone application written in Scala.js -- not maintained
 
 **This repository is not maintained anymore.
@@ -39,3 +69,4 @@ version with:
 
     > set scalaJSStage in Global := FullOptStage
     > test
+
